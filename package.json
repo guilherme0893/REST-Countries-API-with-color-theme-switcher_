@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
+    "axios": "^0.27.2",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

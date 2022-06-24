@@ -1,27 +1,18 @@
-import React, { useEffect, useState } from 'react';
-// import GlobalContext from '../Context/GlobalContext';
+import React, { useContext, useEffect, useState } from 'react';
+import GlobalContext from '../Context/GlobalContext';
+import IContext from '../Interfaces/IContext';
 import getCountriesByRegion from '../Services/getCountriesByRegion';
-import countries from '../Types/countries';
 
 function Filter() {
-  const [setCountries] = useState<countries[]>([]);
-  const [selectRegion, setSelectRegion] = useState('');
-  // const { filterValue } = useContext(GlobalContext);
-
-  // https://stackoverflow.com/questions/70043668/react-typescript-input-onchange-event-type
-  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   console.log(event.target.value);
-  //   setSelectRegion(event.target.value.toLowerCase());
-  //   console.log(event.target.value);
-  // };
+  const {setCountries} = useContext(GlobalContext) as IContext;
+  const {filterValue, setFilterValue} = useContext(GlobalContext) as IContext;
 
   useEffect(() => {
-    getCountriesByRegion(selectRegion).then((country) => setCountries(country));
-  }, [setCountries, setSelectRegion, selectRegion]);
+    getCountriesByRegion(filterValue).then((country) => setCountries(country));
+  }, [setCountries, setFilterValue, filterValue]);
 
   const onHandleChange = (value: string) => {
-    // console.log(selectRegion);
-    setSelectRegion(value);
+    setFilterValue(value);
   };
 
   return (

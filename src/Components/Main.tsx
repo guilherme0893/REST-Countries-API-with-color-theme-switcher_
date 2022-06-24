@@ -1,29 +1,35 @@
 import React, { useEffect, useContext, useState } from 'react';
 import CountryCard from './CountryCard';
+import Navbar from '../Components/Navbar';
 import getAllCountries from '../Services/getAllCountries';
 
-type countries = {
-  flag: string;
-  name: string;
+interface countries {
+  flags: {
+    svg: string,
+  };
+  name: {
+    common: string,
+  }
   population: number;
   region: string;
   capital: string;
-}
+};
 
 function Main() {
   const [countries, setCountries] = useState<countries[]>([]);
-
+  
   useEffect(() => {
-    getAllCountries().then((country) => setCountries(country)); 
+    getAllCountries().then((country) => setCountries(country));
   }, [setCountries]);
 
   return (
     <div className="mt-10">
+      <Navbar />
       <main
         className='container grid grid-cols-6 gap-16 mx-auto'
       >
         {
-          countries.map((country: any, index: number) => (
+          countries.map((country, index: number) => (
             <CountryCard
               key={ index }
               flag={ country.flags.svg }

@@ -1,8 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useState } from 'react';
+// import { useParams } from 'react-router-dom';
 import countriesProps from '../Types/countriesProps';
 
 function CountryCard(props: countriesProps) {
+  // const { id } = useParams();
   const {
     name, population, region, capital, flag,
   } = props;

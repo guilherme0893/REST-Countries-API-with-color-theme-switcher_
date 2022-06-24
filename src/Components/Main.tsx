@@ -2,18 +2,7 @@ import React, { useEffect, useContext, useState } from 'react';
 import CountryCard from './CountryCard';
 import Navbar from '../Components/Navbar';
 import getAllCountries from '../Services/getAllCountries';
-
-interface countries {
-  flags: {
-    svg: string,
-  };
-  name: {
-    common: string,
-  }
-  population: number;
-  region: string;
-  capital: string;
-};
+import countries from '../Types/countries';
 
 function Main() {
   const [countries, setCountries] = useState<countries[]>([]);

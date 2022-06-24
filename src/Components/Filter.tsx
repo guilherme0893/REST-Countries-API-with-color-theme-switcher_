@@ -1,17 +1,7 @@
 import React, { useEffect, useContext, useState } from 'react';
 import getCountriesByRegion from '../Services/getCountriesByRegion';
-
-type countries = {
-  flag: string;
-  name: string;
-  population: number;
-  region: string;
-  capital: string;
-}
-
-interface filterProps {
-  filteredRegion: string;
-};
+import countries from '../Types/countries';
+import filterProps from '../Types/filterProps';
 
 function Filter({filteredRegion}: filterProps) {
   const [countries, setCountries] = useState<countries[]>([]);

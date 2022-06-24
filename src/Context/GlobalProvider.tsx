@@ -4,15 +4,19 @@ import IProps from '../Interfaces/IProps';
 
 const defaultStates = {
   filterValue: '',
+  countries: [],
 };
 
 function GlobalProvider({ children }: IProps) {
   const [filterValue, setFilterValue] = useState(defaultStates.filterValue);
+  const [countries, setCountries] = useState(defaultStates.countries);
 
   const contextValues = useMemo(() => ({
     filterValue,
     setFilterValue,
-  }), [filterValue]);
+    countries,
+    setCountries,
+  }), [filterValue, countries]);
 
   return (
     <GlobalContext.Provider value={contextValues}>

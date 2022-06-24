@@ -1,4 +1,4 @@
-type countries = {
+type Countries = {
   flags: {
     svg: string,
   };
@@ -10,4 +10,4 @@ type countries = {
   capital: string;
 };
 
-export default countries;
+export default Countries;

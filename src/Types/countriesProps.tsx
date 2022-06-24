@@ -1,4 +1,4 @@
-type countriesProps = {
+type CountriesProps = {
   flag: string;
   name: string;
   population: number;
@@ -6,4 +6,4 @@ type countriesProps = {
   capital: string;
 };
 
-export default countriesProps;
+export default CountriesProps;

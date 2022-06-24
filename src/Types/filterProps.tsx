@@ -1,5 +1,5 @@
-type filterProps = {
+type FilterProps = {
   filteredRegion: string;
 };
 
-export default filterProps;
+export default FilterProps;

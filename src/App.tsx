@@ -1,9 +1,11 @@
-// import GlobalProvider from './Context/GlobalProvider';
+import GlobalProvider from './Context/GlobalProvider';
 import Routes from './Routes/Routes';
 
 function App() {
   return (
-    <Routes />
+    <GlobalProvider>
+      <Routes />
+    </GlobalProvider>
   );
 }
 

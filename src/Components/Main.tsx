@@ -23,7 +23,7 @@ function Main() {
         className='container grid grid-cols-6 gap-16 mx-auto'
       >
         {
-          countries.map((country: any, index: any) => (
+          countries.map((country: any, index: number) => (
             <CountryCard
               key={ index }
               flag={ country.flags.svg }

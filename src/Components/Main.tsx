@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import CountryCard from './CountryCard';
 import Navbar from './Navbar';
 import getAllCountries from '../Services/getAllCountries';
-import Countries from '../Types/countries';
+import GlobalContext from '../Context/GlobalContext';
+import IContext from '../Interfaces/IContext';
 
 function Main() {
-  const [countries, setCountries] = useState<Countries[]>([]);
+  const {countries, setCountries} = useContext(GlobalContext) as IContext;
 
   useEffect(() => {
     getAllCountries().then((country) => setCountries(country));
@@ -18,7 +19,7 @@ function Main() {
         className="container grid grid-cols-6 gap-16 mx-auto"
       >
         {
-          countries.map((country, index: number) => (
+          countries.map((country: any, index: number) => (
             <CountryCard
               key={index}
               flag={country.flags.svg}

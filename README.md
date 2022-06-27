@@ -15,7 +15,7 @@ the API used is the REST Countries (https://restcountries.com/), and Axios was u
 
 # Take a look at the application
 
-- Soon
+https://rest-countries-api-with-color-theme-switcher-ten.vercel.app/
 
 # Major techs
 
